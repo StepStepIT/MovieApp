@@ -13,6 +13,5 @@ namespace DLL.Models
         public int Row { get; set; }
         public bool IsBusy { get; set; }
         public double Cost { get; set; }
-        public string ClientName { get; set; }
     }
 }

@@ -13,7 +13,9 @@ namespace DLL.Models
         public Session Session { get; set; }
         public DateTime BookingDate { get; set; }
         public string CustomerName { get; set; }
-        // phone num місце
+        public string CustomerPhone { get; set; }
+        public List<Chair> Chairs { get; set; }
+        public double TotalPrice { get; set; }
         public bool isPaid { get; set; }
         public bool isCanceled { get; set; }
     }

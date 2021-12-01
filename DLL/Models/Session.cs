@@ -12,5 +12,6 @@ namespace DLL.Models
         public Movie Movie { get; set; }
         public Auditorium Auditorium { get; set; }
         public DateTime DateStart { get; set; }
+        public List<Booking> SessionBookings { get; set; }
     }
 }
