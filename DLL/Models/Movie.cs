@@ -14,5 +14,7 @@ namespace DLL.Models
         public string Genre { get; set; }
         public string Director { get; set; }
         public TimeOnly Duration { get; set; }
+        public int SessionId { get; set; }
+        public List<Session> Sessions { get; set; }
     }
 }

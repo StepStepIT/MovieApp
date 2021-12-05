@@ -9,9 +9,11 @@ namespace DLL.Models
     internal class Booking
     {
         public int Id { get; set; }
+        public int EmployeeId { get; set; }
         public Employee Employee { get; set; }
+        public int SessionId { get; set; }
         public Session Session { get; set; }
-        public DateTime BookingDate { get; set; }
+        public DateTime Date { get; set; }
         public string CustomerName { get; set; }
         public string CustomerPhone { get; set; }
         public List<Chair> Chairs { get; set; }

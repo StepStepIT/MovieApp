@@ -1,33 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram MajorVersion="1" MinorVersion="1">
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
   <Class Name="DLL.Models.Auditorium">
     <Position X="1.5" Y="3.5" Width="1.5" />
+    <AssociationLine Name="Chairs" Type="DLL.Models.Chair">
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="-0.057" Y="0.071" Height="0.182" Width="1.568" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAQCAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Models\Auditorium .cs</FileName>
+      <HashCode>QAQCAAAAAAAAAAAAAGAAAAAIAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Auditorium.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
       <Property Name="Chairs" />
+      <Property Name="Sessions" />
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="DLL.Models.Booking">
-    <Position X="5.75" Y="6" Width="1.5" />
+    <Position X="5.75" Y="6.25" Width="1.5" />
     <AssociationLine Name="Session" Type="DLL.Models.Session" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="6.875" Y="6" />
-        <Point X="6.875" Y="1.148" />
-        <Point X="2.25" Y="1.148" />
+        <Point X="6.875" Y="6.25" />
+        <Point X="6.875" Y="1.437" />
+        <Point X="2.25" Y="1.437" />
       </Path>
     </AssociationLine>
     <AssociationLine Name="Chairs" Type="DLL.Models.Chair" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="5.75" Y="6.688" />
-        <Point X="4.812" Y="6.688" />
-        <Point X="4.812" Y="4.123" />
+        <Point X="5.75" Y="7.055" />
+        <Point X="5.312" Y="7.055" />
+        <Point X="5.312" Y="4.758" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAQCAAAAAAAAAYAAAAAAAAAASAAQQAAAAAEBAAAAAAA=</HashCode>
+      <HashCode>AAQCAAAAAAAAAQAAAAAAAAAISAAQQAABAAEBAAACAAA=</HashCode>
       <FileName>Models\Booking.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -39,74 +45,84 @@
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="DLL.Models.Chair">
-    <Position X="4" Y="2.25" Width="1.5" />
+    <Position X="4.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAAAAAEAAABBAAAAAAgAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAACAAAAAAAIAAAAAEAABBBAAABAAgAAACAAAAAAAAA=</HashCode>
       <FileName>Models\Chair.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Auditorium" />
+      <Property Name="Booking" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="DLL.Models.Employee">
     <Position X="8.75" Y="3.5" Width="1.75" />
-    <AssociationLine Name="EmployeeBookings" Type="DLL.Models.Booking" FixedFromPoint="true" FixedToPoint="true">
+    <AssociationLine Name="Bookings" Type="DLL.Models.Booking" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="8.75" Y="4.532" />
-        <Point X="8.375" Y="4.532" />
-        <Point X="8.375" Y="6.312" />
-        <Point X="7.25" Y="6.312" />
+        <Point X="8.75" Y="4.724" />
+        <Point X="8.375" Y="4.724" />
+        <Point X="8.375" Y="7.055" />
+        <Point X="7.25" Y="7.055" />
       </Path>
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="0.11" Y="0.06" Height="0.182" Width="2.506" />
+      </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAACAjAAAAAAAAAAAAAgAAQABAAIAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAACAiCAAAAgAAAAEAAAAAQABAAIEAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Employee.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="EmployeeLoginData" />
+      <Property Name="LoginData" />
     </ShowAsAssociation>
     <ShowAsCollectionAssociation>
-      <Property Name="EmployeeBookings" />
+      <Property Name="Bookings" />
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="DLL.Models.LoginData">
     <Position X="8" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAQAAAAAAA=</HashCode>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAACAAAAAACAAAQAAAAAAA=</HashCode>
       <FileName>Models\LoginData.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="DLL.Models.Movie">
     <Position X="0.5" Y="5.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACABAAAAAiAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <HashCode>AAACABAAAAAiAAAAACIAAAAIAAAAAAAAAAAAAAAAAAg=</HashCode>
       <FileName>Models\Movie.cs</FileName>
     </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Sessions" />
+    </ShowAsCollectionAssociation>
   </Class>
   <Class Name="DLL.Models.Session">
     <Position X="0.75" Y="0.5" Width="1.5" />
     <AssociationLine Name="Movie" Type="DLL.Models.Movie" FixedFromPoint="true">
       <Path>
-        <Point X="1" Y="1.796" />
+        <Point X="1" Y="2.373" />
         <Point X="1" Y="5.5" />
       </Path>
     </AssociationLine>
     <AssociationLine Name="Auditorium" Type="DLL.Models.Auditorium" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="2.062" Y="1.796" />
-        <Point X="1.938" Y="1.796" />
+        <Point X="2.062" Y="2.373" />
+        <Point X="1.938" Y="2.373" />
         <Point X="1.938" Y="3.5" />
       </Path>
     </AssociationLine>
-    <AssociationLine Name="SessionBookings" Type="DLL.Models.Booking" FixedFromPoint="true" FixedToPoint="true">
+    <AssociationLine Name="Bookings" Type="DLL.Models.Booking" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="2.25" Y="1.503" />
-        <Point X="6.312" Y="1.503" />
-        <Point X="6.312" Y="6" />
+        <Point X="2.25" Y="1.95" />
+        <Point X="6.312" Y="1.95" />
+        <Point X="6.312" Y="6.25" />
       </Path>
-      <MemberNameLabel ManuallyPlaced="true">
-        <Position X="0.1" Y="0.123" />
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="0.1" Y="0.123" Height="0.182" Width="2.313" />
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>BAACAAAAAAAAEAAAAAAAAAAAAAAAAAAAACAAAAAACAA=</HashCode>
+      <HashCode>BAACAAAAAAAoEAAAAAAABAAAAQAAAAAAACAAAAAAAAA=</HashCode>
       <FileName>Models\Session.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -114,7 +130,7 @@
       <Property Name="Auditorium" />
     </ShowAsAssociation>
     <ShowAsCollectionAssociation>
-      <Property Name="SessionBookings" />
+      <Property Name="Bookings" />
     </ShowAsCollectionAssociation>
   </Class>
   <Font Name="Segoe UI" Size="9" />
