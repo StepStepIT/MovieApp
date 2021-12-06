@@ -36,8 +36,6 @@ namespace DLL.Models
 
         public void ChairConfiruge(EntityTypeBuilder<Chair> builder)
         {
-            builder.Property(x => x.Row).IsRequired();
-            builder.Property(x => x.Number).IsRequired();
             builder.Property(x => x.IsBusy).HasDefaultValue(false).IsRequired();
             builder.Property(x => x.Cost).HasDefaultValue(0).IsRequired();
 
@@ -80,8 +78,8 @@ namespace DLL.Models
                 .IsRequired();
 
             builder.HasOne(x => x.LoginData)
-                .WithMany(c => c.Employee)
-                .HasForeignKey(x => x.LoginDataId)
+                .WithOne(c => c.Employee)
+                .HasForeignKey<Employee>(x => x.LoginDataId)
                 .IsRequired();
         }
 
