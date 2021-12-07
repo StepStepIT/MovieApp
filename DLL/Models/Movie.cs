@@ -6,15 +6,14 @@ using System.Threading.Tasks;
 
 namespace DLL.Models
 {
-    internal class Movie
+    public class Movie
     {
         public int Id { get; set; }
         public string Tittle { get; set; }
         public string Description { get; set; }
         public string Genre { get; set; }
         public string Director { get; set; }
-        public TimeOnly Duration { get; set; }
-        public int SessionId { get; set; }
+        public TimeSpan Duration { get; set; }
         public List<Session> Sessions { get; set; }
     }
 }

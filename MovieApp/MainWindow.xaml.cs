@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BLL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,11 @@ namespace MovieApp
     /// </summary>
     public partial class MainWindow : Window
     {
+        ClassBLL classBLL = new ClassBLL();
         public MainWindow()
         {
             InitializeComponent();
+            classBLL.DS();
         }
     }
 }

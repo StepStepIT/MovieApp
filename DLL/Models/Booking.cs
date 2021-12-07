@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 //
 namespace DLL.Models
 {
-    internal class Booking
+    public class Booking
     {
         public int Id { get; set; }
         public int EmployeeId { get; set; }
@@ -16,7 +16,7 @@ namespace DLL.Models
         public DateTime Date { get; set; }
         public string CustomerName { get; set; }
         public string CustomerPhone { get; set; }
-        public List<Chair> Chairs { get; set; }
+        public Chair Chair { get; set; }
         public double TotalPrice { get; set; }
         public bool isPaid { get; set; }
         public bool isCanceled { get; set; }
