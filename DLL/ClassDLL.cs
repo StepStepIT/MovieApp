@@ -5,11 +5,6 @@ namespace DLL
     public class ClassDLL
     {
 
-        public void AA()
-        {
-      
-        }
-        
 
 
     }

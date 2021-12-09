@@ -136,14 +136,13 @@ namespace DLLTests
             Assert.NotNull(loginData);
         }
 
-          [Fact]
-          public void AddChairTest()
-          {
+        [Fact]
+        public void AddChairTest()
+        {
             var chairTemp = new Chair
             {
                 Booking = new Booking
                 {
-                    //Chair = new Chair() { Hall = new Hall { Number = 554 } },
                     CustomerName = "Customer1",
                     CustomerPhone = "Curtomer phone1",
                     Employee = new Employee
@@ -177,12 +176,13 @@ namespace DLLTests
 
             };
 
-              context.Chairs.Add(chairTemp);
-              context.SaveChanges();
+            context.Chairs.Add(chairTemp);
+            context.SaveChanges();
 
-              var chair = context.Chairs.First(x => x.Number == 34);
-              Assert.NotNull(chair);
-          }
+            var chair = context.Chairs.First(x => x.Number == 34);
+            Assert.NotNull(chair);
+        }
+       
         [Fact]
         public void AddHallTest()
         {
@@ -204,6 +204,7 @@ namespace DLLTests
             var hall = context.Halls.First(x => x.Number == 3);
             Assert.NotNull(hall);
         }
+        
         [Fact]
         public void AddSessionTest()
         {
@@ -228,6 +229,7 @@ namespace DLLTests
             var session = context.Sessions.First(x => x.DateStart == sessionTemp.DateStart);
             Assert.NotNull(session);
         }
+        
         [Fact]
         public void AddBookingTest()
         {
@@ -256,7 +258,7 @@ namespace DLLTests
                         Duration = new TimeSpan(1, 30, 00),
                         Genre = "EpiC2"
                     },
-                    Hall = new Hall { Number = 54},
+                    Hall = new Hall { Number = 54 },
                     DateStart = DateTime.Now
                 },
             };

@@ -24,8 +24,8 @@ namespace MovieApp
         ClassBLL classBLL = new ClassBLL();
         public MainWindow()
         {
+         
             InitializeComponent();
-            classBLL.DS();
         }
     }
 }

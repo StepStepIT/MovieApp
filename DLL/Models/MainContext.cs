@@ -86,11 +86,6 @@ namespace DLL.Models
             builder.Property(x => x.WorksFrom)
                 .HasDefaultValue(DateTime.Now)
                 .IsRequired();
-
-            /*builder.HasOne(x => x.LoginData)
-                .WithOne(c => c.Employee)
-                .HasForeignKey<Employee>(x => x.LoginDataId)
-                .IsRequired()*/;
         }
 
         public void SessionConfigure(EntityTypeBuilder<Session> builder)
