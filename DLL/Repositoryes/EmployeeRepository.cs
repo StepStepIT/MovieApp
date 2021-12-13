@@ -1,4 +1,5 @@
-﻿using DLL.Models;
+﻿using DLL.Context;
+using DLL.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -16,8 +17,15 @@ namespace DLL.Repositoryes
         public override async Task<IEnumerable<Employee>> GetAllAsync() 
         {
             return await dbSet.Include(x => x.Bookings)
+                .Include(s => s.LoginData)
                 .ToListAsync()
                 .ConfigureAwait(false);
+        }
+        public async Task<IEnumerable<Employee>> GetAllEmployeeWithoutLoginData()
+        {
+            return await dbSet.Include(x => x.Bookings)
+              .ToListAsync()
+              .ConfigureAwait(false);
         }
         public override async Task<IEnumerable<Employee>> FindByCounditionAsync(Expression<Func<Employee, bool>> predicate)
         {

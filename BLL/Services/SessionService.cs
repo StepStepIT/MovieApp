@@ -11,9 +11,9 @@ namespace BLL.Services
     {
         private readonly SessionRepository sessionRepository;
 
-        public SessionService(SessionRepository session)
+        public SessionService(SessionRepository repository)
         {
-            sessionRepository = session;
+            sessionRepository = repository;
         }
 
 

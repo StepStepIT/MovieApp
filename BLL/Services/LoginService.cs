@@ -7,16 +7,14 @@ namespace BLL.Services
     {
         private readonly LoginRepository loginRepository;
 
-        public LoginService(LoginRepository repository)
+        public LoginService(LoginRepository loginRepository)
         {
-            loginRepository = repository;
+            this.loginRepository = loginRepository;
         }
 
         public async Task<Employee> EmployeeAutorization(LoginData loginData)
         {
           return (await loginRepository.FindByCounditionAsync(x => x.Login == loginData.Login && x.Password == loginData.Password)).First().Employee;
-
-          
         }
     }
 }

@@ -1,20 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DLL.Models;
+﻿using DLL.Models;
 using DLL.Repositoryes;
 
 namespace BLL.Services
 {
-    public class EmployeeService 
+    public class EmployeeService
     {
         private readonly EmployeeRepository employeeRepository;
 
-        public EmployeeService(EmployeeRepository repository)
+        public EmployeeService(EmployeeRepository employeeRepository)
         {
-            employeeRepository = repository;
+            this.employeeRepository = employeeRepository;
+        }
+
+        public async Task ChangePassword(Employee currentEmployee, string newPassword)
+        {
+            currentEmployee.LoginData.Password = newPassword;
+            await employeeRepository.UpdateEntityAsync(currentEmployee);
         }
     }
 }

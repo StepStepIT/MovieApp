@@ -12,9 +12,9 @@ namespace BLL.Services
     {
         HallRepository hallRepository;
 
-        public HallService(HallRepository hall)
+        public HallService(HallRepository hallRepository)
         {
-            hallRepository = hall;
+            this.hallRepository = hallRepository;
         }
 
         public async Task<List<Hall>> GetAllHalls()

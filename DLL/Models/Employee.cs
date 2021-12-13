@@ -16,6 +16,6 @@ namespace DLL.Models
         public DateTime Birthday { get; set; }
         public DateTime WorksFrom { get; set; }
         public LoginData LoginData { get; set; }
-        public List<Booking> Bookings { get; set; }
+        public List<Booking>? Bookings { get; set; }
     }
 }

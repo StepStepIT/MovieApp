@@ -12,9 +12,9 @@ namespace BLL.Services
     {
         private readonly BookingRepository bookingRepository;
 
-        public BookingService(BookingRepository booking)
+        public BookingService(BookingRepository bookingRepository)
         {
-            bookingRepository = booking;
+            this.bookingRepository = bookingRepository;
         }
 
         public async Task BookingTicket(Booking booking)
