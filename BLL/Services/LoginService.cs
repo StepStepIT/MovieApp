@@ -12,7 +12,7 @@ namespace BLL.Services
             this.loginRepository = loginRepository;
         }
 
-        public async Task<Employee> EmployeeAutorization(LoginData loginData)
+        public async Task<Employee> EmployeeAutorization(LoginData loginData) // ADD Employee repository and select from emplRepository. Use FirstAsync();
         {
           return (await loginRepository.FindByCounditionAsync(x => x.Login == loginData.Login && x.Password == loginData.Password)).First().Employee;
         }
