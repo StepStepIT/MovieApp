@@ -11,14 +11,15 @@ namespace BLL.Services
     public class MovieService
     {
         private readonly MovieRepository movieRepository;
-        public MovieService(MovieRepository movieRepository)
+         private readonly MovieRepository _movieRepository;
+        public MovieService(MovieRepository _movieRepository)
         {
             this.movieRepository = movieRepository;
         }
 
-        public async Task<List<Movie>> GetAllMovie()
+        public async Task<List<Movie>> GetAllMovie()//Add async 
         {
-            var moviesTemp = await movieRepository.GetAllAsync().ConfigureAwait(false);
+            var moviesTemp = await _movieRepository.GetAllAsync().ConfigureAwait(false);
 
             return moviesTemp.ToList();
         }
